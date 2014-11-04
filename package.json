@@ -1,0 +1,25 @@
+{
+  "name": "cli-average",
+  "version": "0.0.1",
+  "description": "Average values from stdout over a given interval",
+  "author": "Tabcorp Digital Team",
+  "license": "MIT",
+  "main": "index.js",
+  "bin": {
+    "cli-average": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TabDigital/cli-average.git"
+  },
+  "keywords": [
+    "cli",
+    "average"
+  ],
+  "bugs": {
+    "url": "https://github.com/TabDigital/cli-average/issues"
+  },
+  "dependencies": {
+    "ms": "~0.6.2"
+  }
+}

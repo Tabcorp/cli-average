@@ -1,5 +1,6 @@
-var ms = require("ms"),
-    cli = require("command-line-args")([
+var ms    = require("ms"),
+    split = require("split"),
+    cli   = require("command-line-args")([
   { name: "interval", type: String, alias: "t", description: "Interval to average the values at e.g. 2s" },
   { name: "help", type: Boolean, description: "Print usage instructions" }
 ]);
@@ -19,8 +20,10 @@ var interval = ms(options.interval || "1s"),
 process.stdin.resume();
 process.stdin.setEncoding('utf8');
 
-process.stdin.on('data', function(buffer) {
-  data.push(Number(buffer));
+process.stdin.pipe(split()).on('data', function(buffer) {
+  if(buffer !== '') {
+    data.push(Number(buffer));
+  }
 });
 
 var writeAverage = function() {

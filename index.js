@@ -14,22 +14,27 @@ if (options.help) {
 }
 
 var interval = ms(options.interval || "1s"),
-    data = [],
-    start = Date.now();
+    data = [];
 
 process.stdin.resume();
 process.stdin.setEncoding('utf8');
 
 process.stdin.on('data', function(buffer) {
-  var now = Date.now();
-  if(now - start > interval) {
-    start = now;
+  data.push(Number(buffer));
+});
+
+var writeAverage = function() {
+  if(data.length > 0) {
     var sum = data.reduce(function(acc, datum) {
-      return acc += datum;
+      return acc + datum;
     })
     var average = sum/data.length;
     process.stdout.write(average.toFixed(2) + '\n');
-    data = [];
   }
-  data.push(Number(buffer));
-});
+  else {
+    process.stdout.write(0 + '\n');
+  }
+  data = [];
+}
+
+setInterval(writeAverage, interval);

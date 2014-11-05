@@ -6,7 +6,7 @@
   "license": "MIT",
   "main": "index.js",
   "bin": {
-    "cli-average": "index.js"
+    "avg": "index.js"
   },
   "repository": {
     "type": "git",

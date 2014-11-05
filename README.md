@@ -17,12 +17,12 @@ for i in {1..50}; do
 done
 ```
 
-You can pipe it into `cli-average` to generate averages of those values over a given time interval
+You can pipe it into `avg` to generate averages of those values over a given time interval
 
 ```bash
-./random.sh | cli-average
+./random.sh | avg
 ```
 
 ## Arguments
 
-- `cli-average -t 10s`: time interval to average the values over
+- `avg -t 10s`: time interval to average the values over

@@ -6,7 +6,7 @@
   "license": "MIT",
   "main": "index.js",
   "bin": {
-    "avg": "index.js"
+    "avg": "bin/avg.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "ms": "~0.6.2",
-    "split": "~0.3.1"
+    "split": "~0.3.1",
+    "command-line-args": "~0.5.3"
   }
 }

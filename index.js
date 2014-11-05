@@ -5,7 +5,7 @@ var ms    = require("ms"),
   { name: "help", type: Boolean, description: "Print usage instructions" }
 ]);
 
-var options = cli.parse();
+var options = cli.parse({unexpectedType: true});
 
 if (options.help) {
   console.log(cli.getUsage({

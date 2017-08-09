@@ -26,4 +26,3 @@ You can pipe it into `avg` to generate averages of those values over a given tim
 ## Arguments
 
 - `avg -t 10s`: time interval to average the values over
-
